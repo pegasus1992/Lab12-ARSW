@@ -33,11 +33,11 @@ Revisión
 *  Configure el banco de pruebas para verificar como varían los tiempos
    de respuesta frente a diferentes escenarios:
 
-   a. 10 usuarios concurrentes.
-   
-   b. 50 usuarios concurrentes.
-   
-   c. 100 usuarios concurrentes.
+     a. 10 usuarios concurrentes.
+
+     b. 50 usuarios concurrentes.
+
+     c. 100 usuarios concurrentes.
 
 * Ejecute las pruebas y analice los resultados, escriba su analisis en
   archivo de texto *analisis.txt* dentro del proyecto.
