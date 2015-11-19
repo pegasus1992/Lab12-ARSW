@@ -28,38 +28,30 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/products")
 public class ProductsController {
-    
-    
-    
-    
+
     @Autowired
     ServicesFacade services;
-    
-    
-    @RequestMapping(value="/check",method = RequestMethod.GET)        
+
+    @RequestMapping(value = "/check", method = RequestMethod.GET)
     public String check() {
-        return "REST API OK";        
+        return "REST API OK";
     }
-    
-    @RequestMapping(method = RequestMethod.POST)        
-    public ResponseEntity<?> addProduct(@RequestBody Producto p) {       
+
+    @RequestMapping(method = RequestMethod.POST)
+    public ResponseEntity<?> addProduct(@RequestBody Producto p) {
         services.addNewProduct(p);
-        Logger.getLogger(ProductsController.class.getName()).log(Level.INFO, null, "POST request processed"+p);        
+        Logger.getLogger(ProductsController.class.getName()).log(Level.INFO, null, "POST request processed" + p);
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
-    
-    @RequestMapping(method = RequestMethod.GET)        
+    @RequestMapping(method = RequestMethod.GET)
     public List<Producto> allProducts() {
         return services.getAllProducts();
     }
-    
+
     @ExceptionHandler(Exception.class)
-    public void handleMyException(Exception  exception) {        
+    public void handleMyException(Exception exception) {
         Logger.getLogger(ProductsController.class.getName()).log(Level.SEVERE, null, exception);
-    } 
+    }
 
-    
-    
 }
-
